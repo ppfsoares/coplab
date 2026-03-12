@@ -1,0 +1,6 @@
+# Boas Práticas — Equipe: Jullia, Paula, Bozzi
+1. Logging deve usar níveis apropriados (INFO, WARNING, ERROR).
+2. Funções devem ter docstrings claras e tipagem estática sempre que possível.
+3. Evitar duplicação de código (DRY). Refatorar funções muito longas.
+4. Testes unitários para funções críticas; cobertura mínima recomendada: 80%.
+5. Configurações sensíveis via variáveis de ambiente (.env), nunca em código.
