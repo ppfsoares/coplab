@@ -44,6 +44,8 @@ import faiss
 from dotenv import load_dotenv
 from google import genai
 
+from models import list_available_models
+
 # =========================
 # Configurações do Modelo
 # =========================
@@ -353,6 +355,10 @@ def cmd_reset(_args):
     delete_artifacts()
     print("Artefatos removidos (índices e pkl).")
 
+def cmd_models(_args):
+    client = load_client()
+    list_available_models(client)
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="genai-copilot-lab",
@@ -378,6 +384,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     rs = sub.add_parser("reset", help="Remove índices/artefatos gerados")
     rs.set_defaults(func=cmd_reset)
+
+    md = sub.add_parser("models", help="Lista modelos disponíveis na API")
+    md.set_defaults(func=cmd_models)
 
     return p
 
