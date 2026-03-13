@@ -8,6 +8,9 @@ Origem: https://github.com/samuelcardoso/genai-copilot-lab/blob/main/WORKSHOP.md
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
+#listar todos os comandos criados
+python main.py -help
 ```
 
 ## Prática
